@@ -10,7 +10,7 @@ const createInterfaceFromFile = file => {
 
 const createInterfaceFromJson = jsonDtdl => {
   const dtmi = jsonDtdl['@id']
-  const fileName = dtmiToPath(dtmi)
+  const fileName = path.join(process.cwd(), dtmiToPath(dtmi))
   if (fs.existsSync(fileName)) {
     console.log(`ERROR: ID ${dtmi} already exists at ${fileName} . Aborting `)
     return false
