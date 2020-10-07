@@ -6,7 +6,10 @@ for (let i = 1; i < process.argv.length; i++) {
   const fullFilePath = path.normalize((path.join(process.cwd(), process.argv[i])))
   if (fullFilePath.startsWith(path.join(process.cwd(), 'dtmi/'))) {
     console.log('\nchecking: ' + file)
-    checkDtmiPathFromFile(file)
+    if (!checkDtmiPathFromFile(file)) {
+      process.exit(1)
+    }
+
   } else {
     console.debug('Skipping file: ' + file)
   }
