@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "repo-convention.js",
-  "directories": {
-    "test": "test"
+  "scripts": {
+    "add-model":"node tools/add-model.js",
+    "validate-files": "node .github/workflows/validate-files.js",
+    "validate-ids": "node .github/workflows/validate-ids.js",
+    "validate-deps": "node .github/workflows/validate-deps.js",
+    "validate-model": "dmr-client validate --repository . --model-file"
   },
   "dependencies": {
     "jsonata": "^1.8.3",
